@@ -10,19 +10,24 @@ class Rectangulo {
         this.ancho = ancho;
     }
 
-    modificarAlto(alto)
+    set setAlto(alto)
     {
         this.alto = alto;
     }
 
-    modificarAncho(ancho)
+    set setAncho(ancho)
     {
         this.ancho = ancho;
     }
 
-    mostrar()
+    get getAlto() 
     {
-        document.write(`<br>alto = ${ this.alto }<br>ancho = ${ this.ancho }<br>`);
+        return this.alto;
+    }
+
+    get getAncho()
+    {
+        return this.ancho;
     }
 
     perimetro()
@@ -33,6 +38,11 @@ class Rectangulo {
     area()
     {
         return this.alto * this.ancho;
+    }
+
+    mostrar()
+    {
+        document.write(`alto = ${this.getAlto}<br>ancho = ${this.getAncho}<br>`);
     }
 }
 
@@ -51,6 +61,6 @@ for (let i=0; i<rectangulos.length; i++)
 }
 
 document.write(`modificacion de propiedades<br>`)
-rectangulos[0].modificarAlto(9);
-rectangulos[0].modificarAncho(8);
+rectangulos[0].setAncho = 9;
+rectangulos[0].setAlto = 8;
 rectangulos[0].mostrar();
