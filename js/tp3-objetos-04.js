@@ -28,7 +28,7 @@ productos.push(new Producto(111, "Mani 200g", 200));
 productos.push(new Producto(112, "Coca Cola 2L Retornable", 220));
 productos.push(new Producto(113, "Fernet Branca 75cl", 950));
 
-console.log(productos);
-
-for (let i in productos) 
-    productos[i].imprimeDatos();
+productos.forEach((producto)=>{
+    producto.imprimeDatos();
+});
+ 
