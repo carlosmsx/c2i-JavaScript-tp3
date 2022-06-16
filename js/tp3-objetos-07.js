@@ -47,7 +47,8 @@ class Agenda
         }
         else
         {
-            alert("No se pueden añadir mas contactos.");
+            //alert("No se pueden añadir mas contactos.");
+            document.write(`No se pueden añadir mas contactos.<br>`);
         }
     }
     
@@ -90,13 +91,17 @@ class Agenda
     }
 }
 
-let agenda = new Agenda(10);
+let agenda = new Agenda(2);
 
 agenda.aniadirContacto(new Contacto("carlos", "123456"));
 agenda.aniadirContacto(new Contacto("Alejandro", "3232323"));
 agenda.aniadirContacto(new Contacto("fede", "442341"));
 
-agenda.listarContactos();
-
 let contacto = agenda.buscarContacto("Alejandro");
 console.log(contacto);
+
+agenda.listarContactos();
+document.write(`Agenda llena? ${agenda.agendaLlena()}<br>`);
+document.write(`Huecos libres: ${agenda.huecosLibres()}<br>`);
+document.write(`Existe contacto? ${agenda.existeContacto(contacto)}<br>`)
+
